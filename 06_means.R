@@ -31,11 +31,11 @@ arsl %>% group_by(subnum, emotion) %>% summarize(
 # overall arousal mean
 arsl %>% group_by(subnum, emotion) %>% summarize(
   m_rating = mean(rating, na.rm = TRUE),
-) %>% group_by(emotion) %>% summarize(
-  gm_rating = mean(m_rating, na.rm = TRUE), 
-  sd_rating = sd(m_rating, na.rm = TRUE)
+) %>% group_by(subnum) %>% summarize(
+  m_rating = mean(m_rating, na.rm = TRUE)
 ) %>% summarize(
-  mean = mean(gm_rating), 
-  sd = sd(gm_rating), 
-  se = sd/sqrt(207))
-
+  n = n(), 
+  mean = mean(m_rating, na.rm = TRUE), 
+  sd = sd(m_rating, na.rm = TRUE), 
+  se = sd/sqrt(n)
+  )
