@@ -23,3 +23,4 @@ arsl <- dt %>% filter(dimension == 'arsl')
 a = twolines(rating ~ age, data = arsl)
 
 cut_a <- 49.04 + 16.74*-.48
+

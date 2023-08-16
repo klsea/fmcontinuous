@@ -68,3 +68,4 @@ mc3 <- anova(arsl.model3, arsl.model4)
 # save model output table
 tab_model(arsl.model1, arsl.model2, arsl.model3, arsl.model4, file = here('output', 'arsl_tab.xls'))
 
+
